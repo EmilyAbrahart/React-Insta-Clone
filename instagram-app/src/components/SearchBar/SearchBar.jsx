@@ -26,7 +26,7 @@ const SearchBar = () => {
 			</div>
 			<input className="searchInput" type="text" placeholder="Search" />
 			<div className="navIcons">
-				<div>{discoverIcon}</div> <div>{heartIcon}</div>
+				<div>{discoverIcon} </div> <div>{heartIcon}</div>
 				<div>{profileIcon}</div>
 			</div>
 		</nav>
