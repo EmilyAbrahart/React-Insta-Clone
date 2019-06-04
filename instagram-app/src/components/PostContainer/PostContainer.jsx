@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CommentSection from './CommentSection/CommentSection';
+import CommentSection from './../CommentSection/CommentSection';
 
-const PostContainer = postContent => {
+const PostContainer = ({ postContent }) => (
 	<div className="postContainer">
-		{postContent.map(post => {
+		{postContent.map(post => (
 			<div className="post">
 				<div className="postHeader">
 					<img
@@ -15,10 +15,10 @@ const PostContainer = postContent => {
 					<div className="postUsername">{post.username}</div>
 				</div>
 				<img className="postImage" src={post.imageUrl} alt={post.username} />
-			</div>;
-			<CommentSection />;
-		})}
-	</div>;
-};
+				<CommentSection comments={post.comments} />
+			</div>
+		))}
+	</div>
+);
 
 export default PostContainer;
