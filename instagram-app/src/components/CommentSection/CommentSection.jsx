@@ -1,12 +1,14 @@
 import React from 'react';
 import moment from 'moment';
+import uuid from 'uuid';
 import './CommentSection.css';
+
 
 const CommentSection = ({ comments, timestamp }) => (
 	<div className="commentSection">
 		<div className="commentContainer">
 			{comments.map(comment => (
-				<div className="comment">
+				<div className="comment" key={uuid()}>
 					<div className="commentUserName">{comment.username}</div>
 					<div className="commentText">{comment.text}</div>
 				</div>

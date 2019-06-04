@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faComment } from '@fortawesome/free-regular-svg-icons';
 import CommentSection from './../CommentSection/CommentSection';
+import uuid from 'uuid';
 import './PostContainer.css';
 
 const heartIcon = <FontAwesomeIcon icon={faHeart} />;
@@ -11,7 +12,7 @@ const commentIcon = <FontAwesomeIcon icon={faComment} />;
 const PostContainer = ({ postContent }) => (
 	<div className="postContainer">
 		{postContent.map(post => (
-			<div className="post">
+			<div className="post" key={uuid()}>
 				<div className="postHeader">
 					<img
 						className="postUserImage"
