@@ -1,17 +1,26 @@
 import React from 'react';
+import moment from 'moment';
+import './CommentSection.css';
 
-const CommentSection = ({ comments }) => (
+const CommentSection = ({ comments, timestamp }) => (
 	<div className="commentSection">
 		<div className="commentContainer">
 			{comments.map(comment => (
 				<div className="comment">
-					<div className="userName">{comment.username}</div>
+					<div className="commentUserName">{comment.username}</div>
 					<div className="commentText">{comment.text}</div>
 				</div>
 			))}
 		</div>
-		<input className="commentInput" type="text" placeholder="Add a comment..."/>
+		<div className="timeStamp">{moment({timestamp}).fromNow()}</div>
+		<div className="commentInputContainer">
+			<input
+				className="commentInput"
+				type="text"
+				placeholder="Add a comment..."
+			/>
+			<div className="commentMenu">...</div>
+		</div>
 	</div>
 );
-
 export default CommentSection;

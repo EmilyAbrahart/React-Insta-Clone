@@ -5,11 +5,14 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faCompass } from '@fortawesome/free-regular-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const igLogo = <FontAwesomeIcon icon={faInstagram} />;
 const profileIcon = <FontAwesomeIcon icon={faUser} />;
 const heartIcon = <FontAwesomeIcon icon={faHeart} />;
 const discoverIcon = <FontAwesomeIcon icon={faCompass} />;
+const searchIcon = <FontAwesomeIcon icon={faSearch} />;
+
 
 const SearchBar = () => {
 	return (
