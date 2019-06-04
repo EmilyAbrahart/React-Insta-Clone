@@ -4,7 +4,11 @@ import uuid from 'uuid';
 import './CommentSection.css';
 
 
-const CommentSection = ({ comments, timestamp }) => (
+
+export default function CommentSection ({ comments, timestamp })  {
+	const postTimeStamp = moment(timestamp, "MMMM Do YYYY, h:mm:ss a").format('YYYYMMDD');
+
+return (
 	<div className="commentSection">
 		<div className="commentContainer">
 			{comments.map(comment => (
@@ -14,7 +18,7 @@ const CommentSection = ({ comments, timestamp }) => (
 				</div>
 			))}
 		</div>
-		<div className="timeStamp">{moment({timestamp}).fromNow()}</div>
+		<div className="timeStamp">{moment(postTimeStamp,"YYYYMMDD").fromNow()} </div>
 		<div className="commentInputContainer">
 			<input
 				className="commentInput"
@@ -24,5 +28,5 @@ const CommentSection = ({ comments, timestamp }) => (
 			<div className="commentMenu">...</div>
 		</div>
 	</div>
-);
-export default CommentSection;
+)}
+
