@@ -8,6 +8,24 @@ nav {
   border-width: 90%;
 }
 
+.nameLogo {
+  display: flex;
+  height: 2.5rem;
+  font-size: 2rem;
+  align-items: center;
+}
+
+.nameLogo div {
+  padding-right: 0.5rem;
+  
+}
+
+.logoText img{
+height: 3rem;
+align-self: baseline;
+}
+
+
 .navIcons {
   display: flex;
   justify-content: space-between;
