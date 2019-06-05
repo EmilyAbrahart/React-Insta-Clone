@@ -13,7 +13,7 @@ const heartIcon = <FontAwesomeIcon icon={faHeart} />;
 const discoverIcon = <FontAwesomeIcon icon={faCompass} />;
 
 
-const SearchBar = () => {
+const SearchBar = ({searchQuery, searchChangeHandler}) => {
 	return (
 		<nav>
 			<div className="nameLogo">
@@ -24,7 +24,7 @@ const SearchBar = () => {
 					/>
 				</div>
 			</div>
-			<input className="searchInput" type="text" placeholder="Search" />
+			<input className="searchInput" type="text" placeholder="Search" onChange={searchChangeHandler} value={searchQuery} />
 			<div className="navIcons">
 				<div>{discoverIcon} </div> <div>{heartIcon}</div>
 				<div>{profileIcon}</div>
