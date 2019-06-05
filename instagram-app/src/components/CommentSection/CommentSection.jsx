@@ -13,7 +13,6 @@ class CommentSection extends React.Component {
 		};
 	}
 
-
 	commentChangeHandler = event => {
 		this.setState({
 			newCommentText: event.target.value
@@ -29,7 +28,7 @@ class CommentSection extends React.Component {
 		event.preventDefault();
 		this.setState(state => ({
 			comments: state.comments.concat(newComment),
-			newCommentText: '',
+			newCommentText: ''
 		}));
 	};
 
