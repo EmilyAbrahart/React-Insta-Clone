@@ -8,14 +8,14 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			postData: [],
+			postData: []
 		};
 	}
-componentDidMount() {
-	this.setState({
-		postData: dummyData,
-	})
-}
+	componentDidMount() {
+		this.setState({
+			postData: dummyData
+		});
+	}
 	render() {
 		return (
 			<div className="App">
