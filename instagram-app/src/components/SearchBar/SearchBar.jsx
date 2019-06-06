@@ -6,25 +6,27 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faCompass } from '@fortawesome/free-regular-svg-icons';
 
-
 const igLogo = <FontAwesomeIcon icon={faInstagram} />;
 const profileIcon = <FontAwesomeIcon icon={faUser} />;
 const heartIcon = <FontAwesomeIcon icon={faHeart} />;
 const discoverIcon = <FontAwesomeIcon icon={faCompass} />;
 
-
-const SearchBar = ({searchQuery, searchChangeHandler}) => {
+const SearchBar = ({ searchQuery, searchChangeHandler }) => {
 	return (
 		<nav>
 			<div className="nameLogo">
 				<div className="logo">{igLogo}</div> <div>|</div>
 				<div className="logoText">
-					<img
-						src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/640px-Instagram_logo.svg.png"
-					/>
+					Instagram
 				</div>
 			</div>
-			<input className="searchInput" type="text" placeholder="Search" onChange={searchChangeHandler} value={searchQuery} />
+			<input
+				className="searchInput"
+				type="text"
+				placeholder="Search"
+				onChange={searchChangeHandler}
+				value={searchQuery}
+			/>
 			<div className="navIcons">
 				<div>{discoverIcon} </div> <div>{heartIcon}</div>
 				<div>{profileIcon}</div>
