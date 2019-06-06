@@ -1,16 +1,11 @@
 import React from 'react';
 import Post from './Post';
-//import './PostContainer.css';
 import uuid from 'uuid';
-import styled from 'styled-components';
-import FlexFunc from './../Styles/ReusableStyles';
+import {ContainerDiv} from './../Styles/ReusableStyles';
 
-const PostContainerDiv = styled.div`
-${FlexFunc("column", "space-around", "center")}
-`
 
 const PostContainer = ({ postContent }) => (
-	<PostContainerDiv>
+	<ContainerDiv direction="column" justify="center" align="center">
 		{postContent.map(post => (
 			<Post
 				username={post.username}
@@ -22,7 +17,7 @@ const PostContainer = ({ postContent }) => (
 				key={uuid()}
 			/>
 		))}
-	</PostContainerDiv>
+	</ContainerDiv>
 );
 
 export default PostContainer;
