@@ -8,8 +8,7 @@ class PostsPage extends React.Component {
 		super(props);
 		this.state = {
 			postData: [],
-			searchQuery: '',
-			searchData: []
+			searchQuery: ''
 		};
 	}
 	componentDidMount() {
@@ -23,13 +22,14 @@ class PostsPage extends React.Component {
 	};
 
 	searchPosts = () => {
-		this.setState(state => {
-			// if (state.searchQuery.length !== 0)
-			state.postData.filter(post => {
-				post.username.toLowerCase().includes(state.searchQuery);
+		if (this.state.searchQuery.length !== 0) {
+			this.setState({
+				postData: this.state.postData.filter(post =>
+					post.username.toLowerCase().includes(this.state.searchQuery)
+				)
 			});
-			// else if (state.searchQuery.length === 0) {state.postData= dummyData }
-		});
+		}
+		else this.setState({postData : dummyData})
 	};
 
 	render() {

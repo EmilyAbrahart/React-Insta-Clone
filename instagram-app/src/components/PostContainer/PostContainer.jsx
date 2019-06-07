@@ -1,10 +1,11 @@
 import React from 'react';
 import Post from './Post';
-import './PostContainer.css';
 import uuid from 'uuid';
+import {ContainerDiv} from './../Styles/ReusableStyles';
+
 
 const PostContainer = ({ postContent }) => (
-	<div className="postContainer">
+	<ContainerDiv direction="column" justify="center" align="center">
 		{postContent.map(post => (
 			<Post
 				username={post.username}
@@ -16,7 +17,7 @@ const PostContainer = ({ postContent }) => (
 				key={uuid()}
 			/>
 		))}
-	</div>
+	</ContainerDiv>
 );
 
 export default PostContainer;

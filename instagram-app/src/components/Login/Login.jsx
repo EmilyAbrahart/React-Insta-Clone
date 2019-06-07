@@ -1,4 +1,26 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import styled from 'styled-components';
+import {
+	FlexFunc,
+	Input,
+	ContainerDiv,
+	LogoContainer,
+	Button
+} from './../Styles/ReusableStyles';
+
+const igLogo = <FontAwesomeIcon icon={faInstagram} />;
+
+const LoginContainerDiv = styled(ContainerDiv)`
+	margin: 250px auto;
+	height: 300px;
+`;
+
+const Form = styled.form`
+	${FlexFunc('column', 'space-evenly', 'center')};
+	width: 100%;
+`;
 
 class Login extends React.Component {
 	constructor(props) {
@@ -28,24 +50,30 @@ class Login extends React.Component {
 
 	render() {
 		return (
-			<div className="loginContainer">
-				<h1>Welcome to Instagram</h1>
-				<form action="" onSubmit={this.login}>
-					<input
+			<LoginContainerDiv>
+				<LogoContainer>
+					<div className="logo">{igLogo}</div> <div>|</div>
+					<div className="logoText">Instagram</div>
+				</LogoContainer>
+
+				<Form action="" onSubmit={this.login}>
+					<Input
+						inputMargin="1rem"
 						type="text"
 						className="username"
 						value={this.state.username}
 						onChange={this.loginChangeHandler}
 					/>
-					<input
+					<Input
+						inputMargin="1rem"
 						type="text"
 						className="password"
 						value={this.state.password}
 						onChange={this.passwordChangeHandler}
 					/>
-					<button type="submit">Login</button>
-				</form>
-			</div>
+					<Button type="submit">Login</Button>
+				</Form>
+			</LoginContainerDiv>
 		);
 	}
 }
