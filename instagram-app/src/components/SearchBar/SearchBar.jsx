@@ -7,7 +7,7 @@ import {
 	faCompass
 } from '@fortawesome/free-regular-svg-icons';
 import styled from 'styled-components';
-import { FlexFunc, Input } from './../Styles/ReusableStyles';
+import { FlexFunc, Input, LogoContainer } from './../Styles/ReusableStyles';
 
 const igLogo = <FontAwesomeIcon icon={faInstagram} />;
 const profileIcon = <FontAwesomeIcon icon={faUser} />;
@@ -33,14 +33,7 @@ const HeaderElement = styled.header`
 	}
 `;
 
-const LogoContainer = styled.div`
-	${FlexFunc('row', 'space-between', 'center')};
-	font-size: 2rem;
 
-	div {
-		padding-right: 0.5rem;
-	}
-`;
 
 const SearchBar = ({ searchQuery, searchChangeHandler }) => {
 	return (
